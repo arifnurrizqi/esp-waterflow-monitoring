@@ -1,6 +1,6 @@
 # waterflow-monitoring
 Visualize waterflow usage from Anywhere in the World (ESP32 + MySQL + PHP)
-using the Fetch method with Interval (Polling) to auto update the data
+using the **Fetch method with Interval (Polling)** to auto update the data
 
 ## Install on localhost
 Use git clone https://github.com/arifnurrizqi/esp-waterflow-monitoring.git or Download this repository in zip form
