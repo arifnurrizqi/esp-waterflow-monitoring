@@ -1,6 +1,7 @@
 /*
-  Rui Santos
+  Rui Santos modified by Arif Nur Rizqi
   Complete project details at https://RandomNerdTutorials.com/esp32-esp8266-mysql-database-php/
+  github repositories https://github.com/arifnurrizqi/esp-waterflow-monitoring
   
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files.
@@ -59,9 +60,12 @@ void loop() {
   
   //Check WiFi connection status
   if(WiFi.status()== WL_CONNECTED){
-
+//    WiFiClientSecure *client = new WiFiClientSecure;
+//    client->setInsecure(); //don't use SSL certificate
+//    HTTPClient https;  // if serverName is using https:// replace all "http" syntax with "https"
+    
     WiFiClient client;
-    HTTPClient http;
+    HTTPClient http; 
     
     // Your Domain name with URL path or IP address with path
     http.begin(client, serverName);
