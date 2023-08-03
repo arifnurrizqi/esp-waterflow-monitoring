@@ -17,10 +17,10 @@ Example here: esp_waterflow
 
 Example here: esp_waterflow
 ```
-> $servername = "localhost";
-> $dbname = "esp_waterflow";
-> $username = "root";
->$password = "";
+$servername = "localhost";
+$dbname = "esp_waterflow";
+$username = "root";
+$password = "";
 ```
 
 9. Import the web database to phpmyadmin
@@ -30,6 +30,6 @@ example here: localhost/esp-waterflow-monitoring
 
 ### default username & password
 ```
-> username : user
-> password : 12345678
+username : user
+password : 12345678
 ```
