@@ -1,6 +1,6 @@
 <?php
 /*
-  Rui Santos
+  Rui Santos modified by Arif Nur Rizqi  at https://github.com/arifnurrizqi
   Complete project details at https://RandomNerdTutorials.com
   
   Permission is hereby granted, free of charge, to any person obtaining a copy
