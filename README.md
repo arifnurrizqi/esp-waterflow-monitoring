@@ -16,10 +16,12 @@ Example here: esp_waterflow
 8. Change the database name, the same as the new database name in step 4:
 
 Example here: esp_waterflow
+```
 > $servername = "localhost";
 > $dbname = "esp_waterflow";
 > $username = "root";
 >$password = "";
+```
 
 9. Import the web database to phpmyadmin
 10. After the database is imported. The web is ready to run on localhost with the address: localhost/NAMEFOLDER
@@ -27,5 +29,7 @@ example here: localhost/esp-waterflow-monitoring
 11. Done.
 
 ### default username & password
+```
 > username : user
 > password : 12345678
+```
