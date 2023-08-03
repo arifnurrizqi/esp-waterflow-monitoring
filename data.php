@@ -1,13 +1,16 @@
 <?php
-$servername = "localhost";
 
-// REPLACE with your Database name
-$dbname = "esp_waterflow";
-// REPLACE with Database user
-$username = "root";
-// REPLACE with Database user password
-$password = "";
+$valid_username = 'user';
+$valid_password = '12345678';
 
+if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) || $_SERVER['PHP_AUTH_USER'] !== $valid_username || $_SERVER['PHP_AUTH_PW'] !== $valid_password) {
+    header('HTTP/1.0 401 Unauthorized');
+    header('WWW-Authenticate: Basic realm="My Protected Area"');
+    echo 'Authorization required';
+    exit;
+}
+
+include "config.php";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

@@ -1,7 +1,8 @@
 <?php
 /*
-  Rui Santos
+  Rui Santos modified by Arif Nur Rizqi at https://github.com/arifnurrizqi
   Complete project details at https://RandomNerdTutorials.com
+  
   
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files.
@@ -10,14 +11,7 @@
   copies or substantial portions of the Software.
 */
 
-$servername = "localhost";
-
-// REPLACE with your Database name
-$dbname = "esp_waterflow";
-// REPLACE with Database user
-$username = "root";
-// REPLACE with Database user password
-$password = "";
+include "config.php";
 
 // Keep this API Key value to be compatible with the ESP32 code provided in the project page. If you change this value, the ESP32 sketch needs to match
 $api_key_value = "tPmAT5Ab3j7F9";
