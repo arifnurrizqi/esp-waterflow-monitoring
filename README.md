@@ -3,29 +3,29 @@ Visualize waterflow usage from Anywhere in the World (ESP32 + MySQL + PHP)
 using the Fetch method with Interval (Polling) to auto update the data
 
 ## Install on localhost
-Use git clone https://github.com/arifnurrizqi/esp-waterflow-monitoring.git or Download repositori ini dalam bentuk zip
+Use git clone https://github.com/arifnurrizqi/esp-waterflow-monitoring.git or Download this repository in zip form
 
-selanjutnya ikuti langkah berikut:
+then follow these steps:
 1. Install xampp
-2. Jalankan & start apache + mysql
-3. Copy dan ekstrak file script di folder xampp/htdocs
-4. Buat database di PhpMyAdmin : localhost/phpmyadmin
-Contoh disini: esp_waterflow
-5. Buka folder script yang telah di ekstrak di xampp/htdocs
-6. Buka file config.php
-8. Ganti nama database, samakan dengan nama database baru pada langkah 4:
+2. Run & start apache + mysql
+3. Copy and extract the script file in the xampp/htdocs folder
+4. Create database in PhpMyAdmin : localhost/phpmyadmin
+Example here: esp_waterflow
+5. Open the extracted script folder in xampp/htdocs
+6. Open the config.php file
+8. Change the database name, the same as the new database name in step 4:
 
-Contoh disini: esp_waterflow
-'hostname' => 'localhost',
-'username' => 'root',
-'password' => '',
-'database' => 'esp_waterflow',
+Example here: esp_waterflow
+> $servername = "localhost";
+> $dbname = "esp_waterflow";
+> $username = "root";
+>$password = "";
 
-9. Import database web ke phpmyadmin
-10. Setelah database di import. Web siap dijalankan di localhost dengan alamat : localhost/NAMAFOLDER
-contoh disini: localhost/esp-waterflow-monitoring
-11. Selesai.
+9. Import the web database to phpmyadmin
+10. After the database is imported. The web is ready to run on localhost with the address: localhost/NAMEFOLDER
+example here: localhost/esp-waterflow-monitoring
+11. Done.
 
 ### default username & password
-username : user
-password : 12345678
+> username : user
+> password : 12345678
