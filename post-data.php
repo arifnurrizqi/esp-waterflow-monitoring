@@ -11,13 +11,13 @@
 */
 
 $servername = "localhost";
-
 // REPLACE with your Database name
 $dbname = "esp_waterflow";
 // REPLACE with Database user
 $username = "root";
 // REPLACE with Database user password
 $password = "";
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Keep this API Key value to be compatible with the ESP32 code provided in the project page. If you change this value, the ESP32 sketch needs to match
 $api_key_value = "tPmAT5Ab3j7F9";
