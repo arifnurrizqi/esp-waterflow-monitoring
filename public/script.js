@@ -3,39 +3,41 @@ var chartV;
 var chartS;
 var chartI;
 
-function fetchData() {
-  fetch("../data.php") // Ganti dengan URL file data.php yang sesuai
-    .then((response) => response.json())
-    .then((data) => {
-      
-      // console.log(data);
+var eventSource = new EventSource("../data_sse.php");
 
-      var value1 = data.map(item => parseFloat(item.value1));
-      var value2 = data.map(item => parseFloat(item.value2));
-      var value3 = data.map(item => parseInt(item.value3));
-      var value4 = data.map(item => parseFloat(item.value4));
-      var reading_time = data.map(item => item.reading_time);
-      
-      // console.log(value1);
-      // console.log(value2);
-      // console.log(value3);
-      // console.log(value4);
-      // console.log(reading_time);
+eventSource.onmessage = function(event) {
+  var data = JSON.parse(event.data);
 
-      chartF.series[0].setData(value1);
-      chartF.xAxis[0].setCategories(reading_time);
-      chartV.series[0].setData(value2);
-      chartV.xAxis[0].setCategories(reading_time);
-      chartS.series[0].setData(value3);
-      chartS.xAxis[0].setCategories(reading_time);
-      chartI.series[0].setData(value4);
-      chartI.xAxis[0].setCategories(reading_time);          
-      
-    })
-    .catch((error) => {
-      console.log("Error fetching data:", error);
-    });
-}
+  // console.log(data);
+
+  // var value1 = data.map(item => item.value1);
+  // var value2 = data.map(item => item.value2);
+  // var value3 = data.map(item => item.value3);
+  // var value4 = data.map(item => item.value4);
+  // var reading_time = data.map(item => item.reading_time);
+
+  var value1 = data.map(item => parseFloat(item.value1));
+  var value2 = data.map(item => parseFloat(item.value2));
+  var value3 = data.map(item => parseInt(item.value3));
+  var value4 = data.map(item => parseFloat(item.value4));
+  var reading_time = data.map(item => item.reading_time);
+  
+  // console.log(value1);
+  // console.log(value2);
+  // console.log(value3);
+  // console.log(value4);
+  // console.log(reading_time);
+
+  // Update charts here
+  chartF.series[0].setData(value1);
+  chartF.xAxis[0].setCategories(reading_time);
+  chartV.series[0].setData(value2);
+  chartV.xAxis[0].setCategories(reading_time);
+  chartS.series[0].setData(value3);
+  chartS.xAxis[0].setCategories(reading_time);
+  chartI.series[0].setData(value4);
+  chartI.xAxis[0].setCategories(reading_time);  
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   chartF = new Highcharts.Chart({
@@ -93,9 +95,4 @@ document.addEventListener("DOMContentLoaded", function () {
     xAxis: { type: "datetime", categories: [], reversed: true },
     yAxis: { title: { text: "Persentase (%)" } },
   });
-
-  fetchData(); // Pertama kali, panggil fetchData untuk mengisi data chart
-
-  // Set interval untuk memanggil fetchData setiap 5 detik
-  setInterval(fetchData, 5000);
 });
