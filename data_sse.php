@@ -9,7 +9,7 @@
 // }
 
 
-$valid_username = 'admin';
+$valid_username = 'user';
 $valid_password = '12345678';
 
 if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) || $_SERVER['PHP_AUTH_USER'] !== $valid_username || $_SERVER['PHP_AUTH_PW'] !== $valid_password) {
@@ -20,15 +20,9 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) || $_SE
 }
 
 // Rest of your code for fetching data and sending JSON response
-$servername = "localhost";
-// REPLACE with your Database name
-$dbname = "esp_waterflow";
-// REPLACE with Database user
-$username = "root";
-// REPLACE with Database user password
-$password = "";
-$conn = new mysqli($servername, $username, $password, $dbname);
+include "config.php";
 
+$conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
